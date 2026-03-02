@@ -1,0 +1,33 @@
+{
+  "name": "git-stats",
+  "version": "1.0.0",
+  "description": "Beautiful git contribution statistics in your terminal. Heatmap, streaks, languages, productivity patterns.",
+  "type": "module",
+  "bin": {
+    "git-stats": "./index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "git",
+    "statistics",
+    "contributions",
+    "heatmap",
+    "developer-tools",
+    "cli",
+    "terminal",
+    "streaks",
+    "productivity"
+  ],
+  "license": "MIT",
+  "author": "NickCirv",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NickCirv/git-stats.git"
+  },
+  "homepage": "https://github.com/NickCirv/git-stats",
+  "bugs": {
+    "url": "https://github.com/NickCirv/git-stats/issues"
+  }
+}
