@@ -1,3 +1,5 @@
+![Banner](banner.svg)
+
 # git-stats
 
 > Beautiful git contribution statistics in your terminal. Heatmap, streaks, productivity patterns.
