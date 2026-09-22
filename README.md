@@ -1,44 +1,67 @@
-<div align="center">
+![git-stats — Nicholas Ashkar repository collection](assets/nicholas-ashkar/banner.png)
 
 # git-stats
 
-**Contribution heatmap, streaks, and productivity patterns — straight from your git log**
+Render a local Git activity dashboard and contribution heatmap.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?labelColor=0B0A09)](LICENSE)
-[![Node](https://img.shields.io/badge/Node-%3E%3D18-green?labelColor=0B0A09)](https://nodejs.org)
 
-</div>
-
-## Install
-
-```bash
-npx github:NickCirv/git-stats
-```
-
-No global install needed. Run it from inside any git repository.
-
-## Usage
-
-```bash
-npx github:NickCirv/git-stats                         # full dashboard (heatmap + streaks + productivity + languages)
-npx github:NickCirv/git-stats --heatmap               # contribution heatmap only
-npx github:NickCirv/git-stats --streaks               # streak info only
-npx github:NickCirv/git-stats --team                  # contributor leaderboard
-```
-
-| Flag | Description |
-|------|-------------|
-| `--year <year>` | Stats for a specific year (default: current year) |
-| `--author <email>` | Filter commits by author email |
-| `--since <date>` | Custom range, e.g. `"6 months ago"` |
-| `--heatmap` | Heatmap only |
-| `--streaks` | Streaks only |
-| `--team` | Contributor leaderboard |
-| `--help` | Show help |
+<a id="usage"></a>
 
 ## What it does
 
-Reads your local git log and renders a colour-coded GitHub-style heatmap, current and longest commit streaks, peak-hour and peak-day productivity patterns, language breakdown by diff lines (from `git show --numstat`), commit-message quality (conventional commit %) and a contributor leaderboard — all in one terminal dashboard. Works on any git repo; no API keys, no network calls.
+Summarizes commits by day, streak, time, contributor, message and file extension, with year/author/date filters. --team and --streaks select narrower views. See the pinned [implementation](https://github.com/NickCirv/git-stats/blob/4f9397d6afded4ea0eaf9d5e9087b66b82e8140e/index.js).
 
----
-<sub>Zero dependencies · Node 18+ · MIT · by <a href="https://github.com/NickCirv">NickCirv</a></sub>
+
+<a id="install"></a>
+
+## Quickstart
+
+Node requirement from the inspected manifest: **`>=20`**. Requires Git and a local repository with the relevant history. Commands are source-inspected, not executed in this review.
+
+The following example is **source-inspected, not executed**. It uses a pinned checkout; npm package publication is not assumed. Replace project paths or provide the stated input fixtures before running it.
+
+```bash
+git clone https://github.com/NickCirv/git-stats.git
+cd git-stats
+git checkout 4f9397d6afded4ea0eaf9d5e9087b66b82e8140e
+npm install --ignore-scripts
+node index.js --heatmap
+```
+
+Dependencies are installed with lifecycle scripts disabled in this recipe. Read the package scripts before enabling any lifecycle step required by your environment.
+
+## Usage and reference
+
+`git-stats` are the executable names declared by the package. [Command reference](docs/REFERENCE.md) covers source-backed options and entry points.
+
+| Control | Behavior in the inspected implementation |
+| --- | --- |
+| `--year YEAR` | Select a calendar year |
+| `--author TEXT` | Filter an author |
+| `--heatmap` | Show the calendar only |
+| `--streaks` | Show streak calculations |
+| `--team` | Show contributor statistics |
+
+## Limits and operational notes
+
+The language view is based on changed-file extensions rather than a complete source-language census. Commit timing and counts are not a measure of productivity or health.
+
+## Development
+
+No runtime checks were executed for this documentation review. The committed smoke test checks entrypoint JavaScript syntax; it does not exercise the command behavior.
+
+| Script | Declared command |
+| --- | --- |
+| `test` | `node --test` |
+
+Work from the pinned source, keep changes focused, and reproduce the affected behavior with a small fixture before proposing a change. Existing contribution and security policies remain authoritative where present.
+
+## Research and status
+
+[Research record](docs/RESEARCH.md) identifies the inspected revision, source evidence, documentation disposition and verification gaps. Static inspection supports the descriptions here; runtime behavior, dependency installation and current hosted services remain unverified.
+
+## License and author
+
+[License](https://github.com/NickCirv/git-stats/blob/4f9397d6afded4ea0eaf9d5e9087b66b82e8140e/LICENSE)
+
+[Nicholas Ashkar](https://nicholashkar.com) · Applied AI, systems and consulting.
